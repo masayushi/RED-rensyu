@@ -59,11 +59,14 @@ nav {
 
     div{
         height: 260px;
-
+// 第〇格
         &:nth-child(1) {
             background: deepskyblue;
+// 格線系統
             display: grid;
+// 垂直置中
             align-items: center;
+// 水平置中
             text-align: center;
         }
 
