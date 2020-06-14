@@ -149,6 +149,7 @@ nav {
 
 @media screen and (max-width:767px) {
     // 手機寬度
+    // 手機不設margin的原因是因為版型問題
     @mixin phone-box {
         width: 100%;
         transition: 0.3s;
