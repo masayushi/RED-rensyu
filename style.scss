@@ -37,6 +37,7 @@ nav {
         }
     }
 }
+
 // 橫幅
 #banner {
     width: 100%;
@@ -59,9 +60,11 @@ nav {
 
     div{
         height: 260px;
+
 // 第〇格
         &:nth-child(1) {
             background: deepskyblue;
+            font-size: 42px;
 // 格線系統
             display: grid;
 // 垂直置中
@@ -103,6 +106,12 @@ nav {
     }
 }
 
+// 選單
+#menu {
+// 隱藏選單
+    display: none;
+}
+
 // RWD
 // 平板：大於等於768  並且  小於等於1199
 @media screen and (min-width: 768px) and (max-width: 1199px) {
@@ -116,8 +125,31 @@ nav {
     nav {
         div {
             @include table-box();
+            // 隱藏所有區塊
+            display: none;
+    }
+         #menu {
+             // 顯示選單區塊
+            display: block;
+
+        a {
+            // 隱藏所有連結
+            display: none;
+            
+            // 顯示第一個選單連結
+            &:nth-child(1) {
+              display: block;
+            }
+        }
+    // 滑入顯示選單
+    // :nth-child(公式)，公式為an+b
+    // n+2(n 從 0 開始增加)
+        &:hover a:nth-child(n+2) {
+            display: block;
+            padding: 20px 0;
         }
     }
+ }
 
     #picture {
         @include table-box();
@@ -159,8 +191,24 @@ nav {
     nav {
         div {
             @include phone-box();
+            display: none;
         }
-    }
+        #menu {
+            display: block;
+            a {
+
+                display: none;
+                
+                &:nth-child(1) {
+                  display: block;
+                }
+            }
+            &:hover a:nth-child(n+2) {
+                display: block;
+                padding: 20px 0;
+            }
+        }
+     }
 
     #picture {
         @include phone-box();

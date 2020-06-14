@@ -59,6 +59,7 @@ nav div a :hover {
 
 #picture div:nth-child(1) {
   background: deepskyblue;
+  font-size: 42px;
   display: -ms-grid;
   display: grid;
   -webkit-box-align: center;
@@ -101,12 +102,30 @@ nav div a :hover {
   margin-bottom: 20px;
 }
 
+#menu {
+  display: none;
+}
+
 @media screen and (min-width: 768px) and (max-width: 1199px) {
   nav div {
     width: 750px;
     margin: 0 auto;
     -webkit-transition: 0.3s;
     transition: 0.3s;
+    display: none;
+  }
+  nav #menu {
+    display: block;
+  }
+  nav #menu a {
+    display: none;
+  }
+  nav #menu a:nth-child(1) {
+    display: block;
+  }
+  nav #menu:hover a:nth-child(n+2) {
+    display: block;
+    padding: 20px 0;
   }
   #picture {
     width: 750px;
@@ -144,6 +163,20 @@ nav div a :hover {
     -webkit-transition: 0.3s;
     transition: 0.3s;
     padding: 0 15px;
+    display: none;
+  }
+  nav #menu {
+    display: block;
+  }
+  nav #menu a {
+    display: none;
+  }
+  nav #menu a:nth-child(1) {
+    display: block;
+  }
+  nav #menu:hover a:nth-child(n+2) {
+    display: block;
+    padding: 20px 0;
   }
   #picture {
     width: 100%;
